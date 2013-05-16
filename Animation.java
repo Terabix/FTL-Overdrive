@@ -11,7 +11,7 @@ public class Animation extends BufferedImage implements ChangeListener{
 	private boolean shuffle;
 	private int frames, currentFrame;
 	
-	public Animation(int width, int height, int imageType, BufferedImage animSheet, int frames, boolean shuffle, EventDriver driver) {
+	public Animation(int width, int height, int imageType, BufferedImage animSheet, int frames, boolean shuffle, FrameDriver driver) {
 		super(width, height, imageType);
 		this.frames = frames;
 		frame = new BufferedImage[frames];
@@ -37,7 +37,6 @@ public class Animation extends BufferedImage implements ChangeListener{
 		g.drawImage(frame[currentFrame],0,0,null);
 	}
 	
-	@Override
 	public void stateChanged(ChangeEvent e) {
 		advanceAnimation();
 	}

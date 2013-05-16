@@ -1,7 +1,12 @@
+import java.util.ArrayList;
+import javax.swing.event.ChangeListener;
 
-class FrameDriver extends EventDriver{
+
+
+class FrameDriver implements Runnable{
 	int framesPerSecond, frameDelay;
 	long frameCount;
+	ArrayList<ChangeListener> listeners = new ArrayList<ChangeListener>();
 	
 	public FrameDriver(int fps){
 		framesPerSecond = fps;
@@ -19,8 +24,15 @@ class FrameDriver extends EventDriver{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(frameCount == framesPerSecond) frameCount = 0;
+		if(frameCount >= framesPerSecond) frameCount = 0;
 	}
-	
 
+	public int addListener(ChangeListener l) {
+		listeners.add(l);
+		return listeners.indexOf(l);
+	}
+
+	public void removeListener(int index){
+		listeners.remove(index);
+	}
 }
