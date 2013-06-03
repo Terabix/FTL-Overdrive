@@ -29,10 +29,10 @@ public class Animation extends BufferedImage implements ChangeListener{
 	}
 
 	private void advanceAnimation(){
-		if(!shuffle){
-			currentFrame++;
-		}else{
+		if(shuffle){
 			currentFrame = (int)Math.random()*frames;
+		}else{
+			currentFrame++;
 		}
 		g.drawImage(frame[currentFrame],0,0,null);
 	}
