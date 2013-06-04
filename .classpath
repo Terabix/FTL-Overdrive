@@ -8,7 +8,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre6"/>
-	<classpathentry kind="lib" path="lib/jars/TWL.jar"/>
 	<classpathentry kind="lib" path="lib/jars/xpp3-1.1.4c.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/TWL"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

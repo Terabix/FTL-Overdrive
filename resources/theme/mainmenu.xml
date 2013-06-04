@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE themes PUBLIC "-//www.matthiasmann.de//TWL-Theme//EN" "http://hg.l33tlabs.org/twl/raw-file/tip/src/de/matthiasmann/twl/theme/theme.dtd">
+<themes>
+    <images file="../resource.dat/img/main_menus/main_base2.png">
+        <area name="mainmenu.background" xywh="*"/>
+    </images>
+    
+    <images file="../resource.dat/img/main_menus/continue_off.png">
+        <area name="mainmenu.continue.disabled" xywh="*"/>
+    </images>
+    <images file="../resource.dat/img/main_menus/continue_on.png">
+        <area name="mainmenu.continue.enabled" xywh="*"/>
+    </images>
+    <images file="../resource.dat/img/main_menus/continue_select2.png">
+        <area name="mainmenu.continue.hover" xywh="*"/>
+    </images>
+    <images>
+        <select name="mainmenu.continue">
+            <alias ref="mainmenu.continue.disabled" if="disabled"/>
+            <alias ref="mainmenu.continue.hover" if="hover"/>
+            <alias ref="mainmenu.continue.enabled"/>
+        </select>
+    </images>
+    
+    <images file="../resource.dat/img/main_menus/start_off.png">
+        <area name="mainmenu.start.disabled" xywh="*"/>
+    </images>
+    <images file="../resource.dat/img/main_menus/start_on.png">
+        <area name="mainmenu.start.enabled" xywh="*"/>
+    </images>
+    <images file="../resource.dat/img/main_menus/start_select2.png">
+        <area name="mainmenu.start.hover" xywh="*"/>
+    </images>
+    <images>
+        <select name="mainmenu.start">
+            <alias ref="mainmenu.start.disabled" if="disabled"/>
+            <alias ref="mainmenu.start.hover" if="hover"/>
+            <alias ref="mainmenu.start.enabled"/>
+        </select>
+    </images>
+    
+    <images file="../resource.dat/img/main_menus/tutorial_off.png">
+        <area name="mainmenu.tutorial.disabled" xywh="*"/>
+    </images>
+    <images file="../resource.dat/img/main_menus/tutorial_on.png">
+        <area name="mainmenu.tutorial.enabled" xywh="*"/>
+    </images>
+    <images file="../resource.dat/img/main_menus/tutorial_select2.png">
+        <area name="mainmenu.tutorial.hover" xywh="*"/>
+    </images>
+    <images>
+        <select name="mainmenu.tutorial">
+            <alias ref="mainmenu.tutorial.disabled" if="disabled"/>
+            <alias ref="mainmenu.tutorial.hover" if="hover"/>
+            <alias ref="mainmenu.tutorial.enabled"/>
+        </select>
+    </images>
+    
+    <images file="../resource.dat/img/main_menus/stats_off.png">
+        <area name="mainmenu.stats.disabled" xywh="*"/>
+    </images>
+    <images file="../resource.dat/img/main_menus/stats_on.png">
+        <area name="mainmenu.stats.enabled" xywh="*"/>
+    </images>
+    <images file="../resource.dat/img/main_menus/stats_select2.png">
+        <area name="mainmenu.stats.hover" xywh="*"/>
+    </images>
+    <images>
+        <select name="mainmenu.stats">
+            <alias ref="mainmenu.stats.disabled" if="disabled"/>
+            <alias ref="mainmenu.stats.hover" if="hover"/>
+            <alias ref="mainmenu.stats.enabled"/>
+        </select>
+    </images>
+    
+    <images file="../resource.dat/img/main_menus/options_off.png">
+        <area name="mainmenu.options.disabled" xywh="*"/>
+    </images>
+    <images file="../resource.dat/img/main_menus/options_on.png">
+        <area name="mainmenu.options.enabled" xywh="*"/>
+    </images>
+    <images file="../resource.dat/img/main_menus/options_select2.png">
+        <area name="mainmenu.options.hover" xywh="*"/>
+    </images>
+    <images>
+        <select name="mainmenu.options">
+            <alias ref="mainmenu.options.disabled" if="disabled"/>
+            <alias ref="mainmenu.options.hover" if="hover"/>
+            <alias ref="mainmenu.options.enabled"/>
+        </select>
+    </images>
+    
+    <images file="../resource.dat/img/main_menus/credits_off.png">
+        <area name="mainmenu.credits.disabled" xywh="*"/>
+    </images>
+    <images file="../resource.dat/img/main_menus/credits_on.png">
+        <area name="mainmenu.credits.enabled" xywh="*"/>
+    </images>
+    <images file="../resource.dat/img/main_menus/credits_select2.png">
+        <area name="mainmenu.credits.hover" xywh="*"/>
+    </images>
+    <images>
+        <select name="mainmenu.credits">
+            <alias ref="mainmenu.credits.disabled" if="disabled"/>
+            <alias ref="mainmenu.credits.hover" if="hover"/>
+            <alias ref="mainmenu.credits.enabled"/>
+        </select>
+    </images>
+    
+    <images file="../resource.dat/img/main_menus/quit_off.png">
+        <area name="mainmenu.quit.disabled" xywh="*"/>
+    </images>
+    <images file="../resource.dat/img/main_menus/quit_on.png">
+        <area name="mainmenu.quit.enabled" xywh="*"/>
+    </images>
+    <images file="../resource.dat/img/main_menus/quit_select2.png">
+        <area name="mainmenu.quit.hover" xywh="*"/>
+    </images>
+    <images>
+        <select name="mainmenu.quit">
+            <alias ref="mainmenu.quit.disabled" if="disabled"/>
+            <alias ref="mainmenu.quit.hover" if="hover"/>
+            <alias ref="mainmenu.quit.enabled"/>
+        </select>
+    </images>
+    
+    <!-- for debug purposes -->
+    <fontDef name="mainmenu.buttonfont" filename="JustinFont11Bold.fnt" color="blue"/>
+    
+    <theme name="mainmenu" ref="-defaults">
+        <param name="background"><image>mainmenu.background</image></param>
+        
+        <theme name="button-continue" ref="button">
+            <param name="background"><image>mainmenu.continue</image></param>
+            <param name="font"><font>mainmenu.buttonfont</font></param>
+        </theme>
+        <theme name="button-start" ref="button">
+            <param name="background"><image>mainmenu.start</image></param>
+            <param name="font"><font>mainmenu.buttonfont</font></param>
+        </theme>
+        <theme name="button-tutorial" ref="button">
+            <param name="background"><image>mainmenu.tutorial</image></param>
+            <param name="font"><font>mainmenu.buttonfont</font></param>
+        </theme>
+        <theme name="button-stats" ref="button">
+            <param name="background"><image>mainmenu.stats</image></param>
+            <param name="font"><font>mainmenu.buttonfont</font></param>
+        </theme>
+        <theme name="button-options" ref="button">
+            <param name="background"><image>mainmenu.options</image></param>
+            <param name="font"><font>mainmenu.buttonfont</font></param>
+        </theme>
+        <theme name="button-credits" ref="button">
+            <param name="background"><image>mainmenu.credits</image></param>
+            <param name="font"><font>mainmenu.buttonfont</font></param>
+        </theme>
+        <theme name="button-quit" ref="button">
+            <param name="background"><image>mainmenu.quit</image></param>
+            <param name="font"><font>mainmenu.buttonfont</font></param>
+        </theme>
+    </theme>
+</themes>
