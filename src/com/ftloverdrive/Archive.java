@@ -51,7 +51,7 @@ public class Archive {
 			}
 
 			// Read the file entries
-			for (int i = 0; i < filecnt; i++) {
+			for (int i = 0; i < offsets.size(); i++) {
 				raf.seek(offsets.get(i));
 
 				ArchiveFile f = new ArchiveFile();

@@ -73,7 +73,8 @@ public class MainMenu extends State {
 		buttons[MainMenu.CREDITS].addCallback(new Runnable() {
 			@Override
 			public void run() {
-				System.out.println(Utils.locateFTLPath());
+				// TODO: Read preferences for this path instead of finding again.
+				System.out.println(Utils.findFTLDatsDir());
 			}
 		});
 

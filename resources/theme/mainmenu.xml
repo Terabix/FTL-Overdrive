@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE themes PUBLIC "-//www.matthiasmann.de//TWL-Theme//EN" "http://hg.l33tlabs.org/twl/raw-file/tip/src/de/matthiasmann/twl/theme/theme.dtd">
 <themes>
-    <images file="../resource.dat/img/main_menus/main_base2.png">
+    <images file="ftldat://resource.dat/img/main_menus/main_base2.png">
         <area name="mainmenu.background" xywh="*"/>
     </images>
     
-    <images file="../resource.dat/img/main_menus/continue_off.png">
+    <images file="ftldat://resource.dat/img/main_menus/continue_off.png">
         <area name="mainmenu.continue.disabled" xywh="*"/>
     </images>
-    <images file="../resource.dat/img/main_menus/continue_on.png">
+    <images file="ftldat://resource.dat/img/main_menus/continue_on.png">
         <area name="mainmenu.continue.enabled" xywh="*"/>
     </images>
-    <images file="../resource.dat/img/main_menus/continue_select2.png">
+    <images file="ftldat://resource.dat/img/main_menus/continue_select2.png">
         <area name="mainmenu.continue.hover" xywh="*"/>
     </images>
     <images>
@@ -22,13 +22,13 @@
         </select>
     </images>
     
-    <images file="../resource.dat/img/main_menus/start_off.png">
+    <images file="ftldat://resource.dat/img/main_menus/start_off.png">
         <area name="mainmenu.start.disabled" xywh="*"/>
     </images>
-    <images file="../resource.dat/img/main_menus/start_on.png">
+    <images file="ftldat://resource.dat/img/main_menus/start_on.png">
         <area name="mainmenu.start.enabled" xywh="*"/>
     </images>
-    <images file="../resource.dat/img/main_menus/start_select2.png">
+    <images file="ftldat://resource.dat/img/main_menus/start_select2.png">
         <area name="mainmenu.start.hover" xywh="*"/>
     </images>
     <images>
@@ -39,13 +39,13 @@
         </select>
     </images>
     
-    <images file="../resource.dat/img/main_menus/tutorial_off.png">
+    <images file="ftldat://resource.dat/img/main_menus/tutorial_off.png">
         <area name="mainmenu.tutorial.disabled" xywh="*"/>
     </images>
-    <images file="../resource.dat/img/main_menus/tutorial_on.png">
+    <images file="ftldat://resource.dat/img/main_menus/tutorial_on.png">
         <area name="mainmenu.tutorial.enabled" xywh="*"/>
     </images>
-    <images file="../resource.dat/img/main_menus/tutorial_select2.png">
+    <images file="ftldat://resource.dat/img/main_menus/tutorial_select2.png">
         <area name="mainmenu.tutorial.hover" xywh="*"/>
     </images>
     <images>
@@ -56,13 +56,13 @@
         </select>
     </images>
     
-    <images file="../resource.dat/img/main_menus/stats_off.png">
+    <images file="ftldat://resource.dat/img/main_menus/stats_off.png">
         <area name="mainmenu.stats.disabled" xywh="*"/>
     </images>
-    <images file="../resource.dat/img/main_menus/stats_on.png">
+    <images file="ftldat://resource.dat/img/main_menus/stats_on.png">
         <area name="mainmenu.stats.enabled" xywh="*"/>
     </images>
-    <images file="../resource.dat/img/main_menus/stats_select2.png">
+    <images file="ftldat://resource.dat/img/main_menus/stats_select2.png">
         <area name="mainmenu.stats.hover" xywh="*"/>
     </images>
     <images>
@@ -73,13 +73,13 @@
         </select>
     </images>
     
-    <images file="../resource.dat/img/main_menus/options_off.png">
+    <images file="ftldat://resource.dat/img/main_menus/options_off.png">
         <area name="mainmenu.options.disabled" xywh="*"/>
     </images>
-    <images file="../resource.dat/img/main_menus/options_on.png">
+    <images file="ftldat://resource.dat/img/main_menus/options_on.png">
         <area name="mainmenu.options.enabled" xywh="*"/>
     </images>
-    <images file="../resource.dat/img/main_menus/options_select2.png">
+    <images file="ftldat://resource.dat/img/main_menus/options_select2.png">
         <area name="mainmenu.options.hover" xywh="*"/>
     </images>
     <images>
@@ -90,13 +90,13 @@
         </select>
     </images>
     
-    <images file="../resource.dat/img/main_menus/credits_off.png">
+    <images file="ftldat://resource.dat/img/main_menus/credits_off.png">
         <area name="mainmenu.credits.disabled" xywh="*"/>
     </images>
-    <images file="../resource.dat/img/main_menus/credits_on.png">
+    <images file="ftldat://resource.dat/img/main_menus/credits_on.png">
         <area name="mainmenu.credits.enabled" xywh="*"/>
     </images>
-    <images file="../resource.dat/img/main_menus/credits_select2.png">
+    <images file="ftldat://resource.dat/img/main_menus/credits_select2.png">
         <area name="mainmenu.credits.hover" xywh="*"/>
     </images>
     <images>
@@ -107,13 +107,13 @@
         </select>
     </images>
     
-    <images file="../resource.dat/img/main_menus/quit_off.png">
+    <images file="ftldat://resource.dat/img/main_menus/quit_off.png">
         <area name="mainmenu.quit.disabled" xywh="*"/>
     </images>
-    <images file="../resource.dat/img/main_menus/quit_on.png">
+    <images file="ftldat://resource.dat/img/main_menus/quit_on.png">
         <area name="mainmenu.quit.enabled" xywh="*"/>
     </images>
-    <images file="../resource.dat/img/main_menus/quit_select2.png">
+    <images file="ftldat://resource.dat/img/main_menus/quit_select2.png">
         <area name="mainmenu.quit.hover" xywh="*"/>
     </images>
     <images>

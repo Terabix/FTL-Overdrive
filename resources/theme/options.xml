@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE themes PUBLIC "-//www.matthiasmann.de//TWL-Theme//EN" "http://hg.l33tlabs.org/twl/raw-file/tip/src/de/matthiasmann/twl/theme/theme.dtd">
 <themes>
-    <images file="../resource.dat/img/optionsUI_new.png">
+    <images file="ftldat://resource.dat/img/optionsUI_new.png">
         <area name="options.background" xywh="*"/>
     </images>
     
