@@ -50,10 +50,10 @@
         <fontParam if="textSelection" color="blue"/>
     </fontDef>
     
-    <images file="../resource.dat/img/box_text1.png">
+    <images file="ftldat://resource.dat/img/box_text1.png">
         <area name="popup.background" xywh="*" splitx="L220,R20" splity="T30,B20" inset="0,-6,-6,-6"/>
     </images>
-    <images file="../resource.dat/img/effects/door_sheet.png">
+    <images file="ftldat://resource.dat/img/effects/door_sheet.png">
         <animation name="door-animation" timeSource="hover">
             <frames duration="1000" count="1" xywh="0,0,35,35"/>
             <frames duration="100" count="5" offsetx="35" xywh="0,0,35,35"/>

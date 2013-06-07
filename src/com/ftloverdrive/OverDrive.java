@@ -18,10 +18,16 @@ import de.matthiasmann.twl.Widget;
 import de.matthiasmann.twl.renderer.lwjgl.LWJGLRenderer;
 import de.matthiasmann.twl.theme.ThemeManager;
 
+import com.ftloverdrive.DataManager;
+import com.ftloverdrive.Utils;
+
+
 public class OverDrive extends Widget {
 	private static final int TICKS_PER_SECOND = 20;
 
 	public static void main(String[] args) {
+		Utils.registerProtocolHandlers("com.ftloverdrive.protocols");
+
 		try {
 			Display.setDisplayMode(new DisplayMode(1280, 720));
 			Display.create();
@@ -35,15 +41,15 @@ public class OverDrive extends Widget {
 
 			overdrive.loadTheme();
 			
-	        Timer timer = gui.createTimer();
-	        timer.setContinuous(true);
-	        timer.setCallback(new Runnable() {
-	            public void run() {
-	            	overdrive.tick();
-	            }
-	        });
-	        timer.setDelay(100 / TICKS_PER_SECOND);
-	        timer.start();
+			Timer timer = gui.createTimer();
+			timer.setContinuous(true);
+			timer.setCallback(new Runnable() {
+				public void run() {
+					overdrive.tick();
+				}
+			});
+			timer.setDelay(100 / TICKS_PER_SECOND);
+			timer.start();
 
 			while (!Display.isCloseRequested() && !overdrive.quit) {
 				GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
@@ -62,7 +68,8 @@ public class OverDrive extends Widget {
 
 			gui.destroy();
 			overdrive.theme.destroy();
-		} catch (Exception e) {
+		}
+		catch (Exception e) {
 			e.printStackTrace();
 		}
 		Display.destroy();
@@ -128,43 +135,57 @@ public class OverDrive extends Widget {
 		fpsCounter.setVisible(!fpsCounter.isVisible());
 	}
 
+	/**
+	 * Loads the TWL theme and sets up FTL dat parsing.
+	 *
+	 * If {UserDataDir}/theme/ does not exist, the dir will be created
+	 * by extracting a theme from within this jar.
+	 */
 	@Action
 	public void loadTheme() throws IOException {
-		loadTheme(false);
-	}
-	
-	public void loadTheme(boolean forceExtractResource) throws IOException {
-		File ftlDir = Utils.locateFTLPath();
-		// Will steam reset the FTL folder every time you try to play vanilla FTL?
-		// If it will, this should be moved somewhere else.
-		File ftlOdDir = new File(ftlDir, "OverDrive");
-		
-		File resourceDatFile = new File(ftlDir, "resources/resource.dat");
-		File resourceDatDir = new File(ftlOdDir, "resource.dat");
-		
-		boolean extractResource = forceExtractResource || !resourceDatDir.exists() || resourceDatDir.listFiles().length == 0;
-		
+		File dataDir = Utils.getUserDataDir();
+
 		try {
-			System.out.println("Reloading theme" + (extractResource ? " and resource.dat" : "") + "...");
-			Utils.copyResourcesRecursively(OverDrive.class.getResource("/theme/"), ftlOdDir);
-			File themeDir = new File(ftlOdDir, "theme");
-			
-			if (forceExtractResource) {
-				Utils.deleteFolder(resourceDatDir);
+			System.out.println("Reloading theme...");
+
+			// TODO: Load a minimal theme to find/prompt for datsDir.
+			//   Read prefs if that path has already been set.
+			File datsDir = Utils.findFTLDatsDir();
+			DataManager.getInstance().init(datsDir);
+
+			// TODO: Then load a fuller theme that relies on FTL resources.
+
+			// If there are multiple "theme/" dirs in the classpath, getResource() gets confused.
+			//java.util.Enumeration<java.net.URL> urls = OverDrive.class.getClassLoader().getResources("theme/");
+			//while (urls.hasMoreElements()) System.out.println( urls.nextElement() );
+			//
+			// Several workarounds:
+			//   - Make the names unique.
+			//   - Enumerate all matching resources and do an instanceof check for JarURLConnection.
+			//   - Get the URL of this class, and compare it's jar path against matches' URLs
+			//     to ensure they're in the same archive.
+			//   - Don't jar resources at all. When compiling and packaging, copy ./overdrive.jar,
+			//     ./lib/ and ./resource/* (acting as a skel dir) into a staging directory.
+			//
+			//     The last is tidiest, and a matter of putting xcopy in the batch scripts, but I'm
+			//     unfamiliar with how Eclipse or maven would be set up for that. -Vhati
+
+			// TODO: For now, delete the non-jar theme dir to prevent conflict.
+			File tmpThemeDir = new File(dataDir, "theme");
+
+			if (!tmpThemeDir.exists()) {
+				// The leading slash means this resource could be from anywhere in CLASSPATH.
+				Utils.copyResourcesRecursively(OverDrive.class.getResource("/theme/"), dataDir);
 			}
-			if (extractResource) {
-				resourceDatDir.mkdir();
-				Archive resourceDat = new Archive(resourceDatFile);
-				resourceDat.extractToFolder(resourceDatDir);
-			}
-			
-			theme = ThemeManager.createThemeManager(new File(themeDir, "FTL-OD.xml").toURI().toURL(), renderer);
-		} catch (IOException e) {
+
+			theme = ThemeManager.createThemeManager(new File(tmpThemeDir, "FTL-OD.xml").toURI().toURL(), renderer);
+		}
+		catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("Failed to load the theme!");
 			return;
 		}
 		getGUI().applyTheme(theme);
-		System.out.println("Reloaded theme" + (extractResource ? " and resource.dat" : "") + "!");
+		System.out.println("Reloaded theme!");
 	}
 }
